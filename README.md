@@ -1,16 +1,39 @@
-# React + Vite
+# 📝 Redux Toolkit Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive, single-page Todo application built with **React**, **Redux Toolkit**, and **Vite**. This project demonstrates centralized state management, immutable state updates, and clean modular component architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Add Tasks:** Create new todo items dynamically with unique IDs.
+- **Delete Tasks:** Remove completed or unwanted tasks from the global store.
+- **Toggle Completion (Mark Done / Undone):** Switch task status with reactive visual feedback (strikethrough styling).
+- **Predictable State Flow:** Powered by Redux Toolkit slices, reducers, and action creators.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Frontend:** React (Hooks: `useSelector`, `useDispatch`)
+- **State Management:** Redux Toolkit (`@reduxjs/toolkit`, `react-redux`)
+- **Build Tool:** Vite
+- **Styling:** CSS / Utility Classes
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── app/
+│   └── store.js             # Redux central store configuration
+├── features/
+│   └── todo/
+│       └── todoslice.js     # Redux slice (reducers & actions)
+├── components/
+│   ├── Addform.jsx          # Component for input & dispatching addTodo
+│   └── Todo.jsx             # List rendering, delete & mark-as-done actions
+├── App.jsx                  # Root component
+├── main.jsx                 # Entry point with Redux <Provider>
+└── index.css                # Global styles
